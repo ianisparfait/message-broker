@@ -70,7 +70,6 @@ example_usage() ->
     broker_worker:add_processor(WorkerPid, {
         log_message, 
         fun({log_message, LogData}) -> 
-            % Logique de traitement du message
             error_logger:info_msg("Received log: ~p", [LogData]) 
         end
     }),

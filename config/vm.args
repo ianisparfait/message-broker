@@ -1,0 +1,42 @@
+## Erlang node name
+-sname message_broker@localhost
+
+## Security cookie for distributed communications
+-setcookie message_broker_secret_key
+
+## Number of schedulers (processing threads)
++S 4:4
+
+## Maximum heap size per process (in MB)
++hms 32
+
+## Maximum number of processes
++P 262144
+
+## Maximum number of ports
++Q 262144
+
+## Monitoring and debugging mode
+-heart
+
+## Enable generational garbage collector
++N true
+
+## Additional code paths
+-pa ./apps/broker/ebin
+
+## Erlang distribution configuration
+-kernel inet_dist_listen_min 9100
+-kernel inet_dist_listen_max 9110
+
+## Optional profiling (use with caution)
+## -profile start
+
+## Memory allocation strategy
++MBas ageffh
+
+## Enable longer scatter/gather I/O lists
++K true
+
+## Use new JIT compiler (if available)
++JIT true
